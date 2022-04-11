@@ -12,6 +12,12 @@
     opacity: 0.9;
 }
 
+.title-box{
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 @media screen and (device-type: tablet) and (orientation: landscape) {
     .title {
         font-size: 100px;
@@ -43,4 +49,34 @@
     .title {
         font-size: 60px;
     }
+}
+
+
+.menu-btn {
+    height: 30fp;
+    width: 30fp;
+    icon-height: 50fp;
+    icon-width: 50fp;
+    background-color: #FFFFFF;
+}
+
+.title-month{
+    height: 30fp;
+    width: 100fp;
+    background-color: white;
+    text-color: #5f5f5f;
+    font-size: 30fp;
+    margin-bottom: 10fp;
+}
+
+.searchbar{
+    height: 40fp;
+    width: 50%;
+}
+
+.headImage{
+
+    width: 40fp;
+    height: 40fp;
+    border-radius: 100;
 }

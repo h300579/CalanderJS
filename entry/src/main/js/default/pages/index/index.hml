@@ -1,10 +1,23 @@
 <div class="container">
     <div class="title-box">
-        <button class="menu-btn">
-
+        <button class="menu-btn" id="main-menu" onselected="onMenuSelected" icon="common/images/menue.png">
         </button>
-        <text class="title">
-            {{ $t('strings.hello') }} {{ title }}
-        </text>
+        <button class="title-month">
+            {{ currentMonth }}▽
+        </button>
+
+        <search onchange="getTodos()" onblur="getTodos()" class="searchbar">
+        </search>
+
+        <image class="headImage" src="http://q2.qlogo.cn/headimg_dl?dst_uin=1193787696&spec=4">
+        </image>
+    </div>
+
+    <div class="text-box">
+        <list>
+            <list-item for="{{toDoLists}}" class="todoList">
+
+            </list-item>
+        </list>
     </div>
 </div>
