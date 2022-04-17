@@ -1,6 +1,11 @@
 {
   "strings": {
     "hello": "Hello",
-    "world": "World"
+    "world": "World",
+    "back": "Back",
+    "save": "Save",
+    "title": "Title",
+    "text": "Text",
+    "data": "data"
   }
 }

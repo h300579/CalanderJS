@@ -1,6 +1,11 @@
 {
   "strings": {
     "hello": "您好",
-    "world": "世界"
+    "world": "世界",
+    "back": "返回",
+    "save": "保存",
+    "title": "标题",
+    "text": "详细信息",
+    "data": "提醒日期"
   }
 }

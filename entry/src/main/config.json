@@ -43,17 +43,35 @@
         "label": "$string:entry_MainAbility",
         "type": "page",
         "launchType": "standard"
+      },
+      {
+        "name": "com.example.calanderbs.MainServiceAbility",
+        "icon": "$media:icon",
+        "description": "$string:mainserviceability_description",
+        "type": "service"
       }
     ],
     "js": [
       {
         "pages": [
-          "pages/index/index"
+          "pages/index/index",
+          "pages/newToDoPage/newToDoPage"
         ],
         "name": "default",
         "window": {
           "designWidth": 720,
           "autoDesignWidth": true
+        }
+      }
+    ],
+    "reqPermissions": [
+      {
+        "reason": "$string:permission_distributed",
+        "name": "ohos.permission.DISTRIBUTED_DATASYNC",
+        "usedScene":
+        {
+          "ability": ["com.huawei.cookbooks.MainAbility"],
+          "when": "always"
         }
       }
     ]

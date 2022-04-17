@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="content">
+        <textarea class="title" onchange="ChangeTitle" placeholder="{{title}}">
+            {{title}}
+        </textarea>
+
+        <textarea class="text" onchange="ChangeText" placeholder="{{text}}">
+            {{text}}
+        </textarea>
+    </div>
+
+    <div class="date-part">
+        <text class="txt">{{datatext}}</text>
+        <picker class="time-picker" type="date" value="{{ddl}}" onchange="ChangeData"> </picker>
+    </div>
+
+
+    <div >
+        <button style="right: 0px;" onclick="ClickToBack"> {{ BACK }} </button>
+        <button style="left: 0px;" onclick="InsertTodos"> {{ SAVE }}</button>
+    </div>
+</div>

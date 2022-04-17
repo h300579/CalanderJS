@@ -80,3 +80,67 @@
     height: 40fp;
     border-radius: 100;
 }
+
+.todoList{
+    margin-top: 40fp;
+}
+
+.time-title{
+    flex-direction: column;
+    width:20%;
+    height:80fp;
+    margin-left: 10fp;
+    margin-top: 10fp;
+}
+
+.week{
+    font-size: 20fp;
+    text-align: center;
+    color: gray;
+}
+
+.day{
+    font-size: 30fp;
+    text-align: center;
+    color: gray;
+}
+
+.mainToDo{
+    border-radius: 8;
+    background-color: #4498DF;
+    flex-direction: column;
+    margin-left: 20fp;
+    height: 80fp;
+    width: 70%;
+}
+
+.toDoTitle{
+    font-size: 16fp;
+    color: white;
+    margin-top: 15fp;
+    margin-left: 15fp;
+}
+
+.Time{
+    font-size: 16fp;
+    color: white;
+    width: 70%;
+    max-lines: 1;
+    margin: 15fp;
+}
+
+
+.addButton {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #bcbcbc;
+    justify-content: space-between;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    right: 6%;
+    bottom: 5%;
+    font-size: 40px;
+    opacity: 0.8;
+    position: fixed;
+}

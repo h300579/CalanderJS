@@ -7,6 +7,14 @@
     {
       "name": "mainability_description",
       "value": "JS_Empty Ability"
+    },
+    {
+      "name": "mainserviceability_description",
+      "value": "hap sample empty service"
+    },
+    {
+      "name": "permission_distributed",
+      "value": "please!"
     }
   ]
 }

@@ -9,15 +9,34 @@
         <search onchange="getTodos()" onblur="getTodos()" class="searchbar">
         </search>
 
-        <image class="headImage" src="http://q2.qlogo.cn/headimg_dl?dst_uin=1193787696&spec=4">
-        </image>
+<!--        <image class="headImage" src="http://q2.qlogo.cn/headimg_dl?dst_uin=1193787696&spec=4">-->
+<!--        </image>-->
     </div>
 
     <div class="text-box">
         <list>
             <list-item for="{{toDoLists}}" class="todoList">
-
+                <div class="time-title">
+                    <text class="week">
+                        星期 {{$item.week}}
+                    </text>
+                    <text class="day">
+                        {{$item.day}}
+                    </text>
+                </div>
+                <div class="mainToDo">
+                    <text class="toDoTitle">
+                        {{$item.title}}
+                    </text>
+                    <text class="Time">
+                        {{$item.description}}
+                    </text>
+                </div>
             </list-item>
         </list>
     </div>
+
+    <button class="addButton" type="circle" onclick="Btn_Add">
+        {{add_delete}}
+    </button>
 </div>
