@@ -43,12 +43,6 @@
         "label": "$string:entry_MainAbility",
         "type": "page",
         "launchType": "standard"
-      },
-      {
-        "name": "com.example.calanderbs.MainServiceAbility",
-        "icon": "$media:icon",
-        "description": "$string:mainserviceability_description",
-        "type": "service"
       }
     ],
     "js": [

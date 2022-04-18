@@ -29,7 +29,7 @@
                         {{$item.title}}
                     </text>
                     <text class="Time">
-                        {{$item.description}}
+                        {{$item.text}}
                     </text>
                 </div>
             </list-item>
