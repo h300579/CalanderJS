@@ -18,10 +18,10 @@
             <list-item for="{{toDoLists}}" class="todoList">
                 <div class="time-title">
                     <text class="week">
-                        星期 {{$item.week}}
+                        星期 {{$item.day}}
                     </text>
                     <text class="day">
-                        {{$item.day}}
+                        {{$item.date}}
                     </text>
                 </div>
                 <div class="mainToDo">

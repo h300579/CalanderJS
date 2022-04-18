@@ -94,6 +94,10 @@ export default {
         todoList.title = this.title;
         todoList.text = this.text;
         todoList.DATE = this.id;
+        todoList.year = this.year;
+        todoList.month = this.month;
+        todoList.date = this.date;
+        todoList.day = this.day;
         //        if (this.ddl_exist)
         //        {actionData.ddl = this.ddl_to_pass;}
         //

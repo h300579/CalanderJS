@@ -65,7 +65,11 @@ public class MainServiceAbility extends AceInternalAbility {
                 if (toDoList.id != null) db.putString(toDoList.id + " id", toDoList.id);
                 if (toDoList.title != null) db.putString(toDoList.id + " title", toDoList.title);
                 if (toDoList.text != null) db.putString(toDoList.id + " text", toDoList.text);
+                if (toDoList.DATE != null) db.putString(toDoList.id + " DATE", toDoList.DATE);
+                if (toDoList.year != null) db.putString(toDoList.id + " year", toDoList.year);
+                if (toDoList.month != null) db.putString(toDoList.id + " month", toDoList.month);
                 if (toDoList.date != null) db.putString(toDoList.id + " date", toDoList.date);
+                if (toDoList.day != null) db.putString(toDoList.id + " day", toDoList.day);
                 HiLog.debug(LABEL, "insert or update success");
                 reply.writeString("result");
                 break;
@@ -82,7 +86,7 @@ public class MainServiceAbility extends AceInternalAbility {
                 }
 
                 for (String i : indexes) {
-                    String id, title, text, date;
+                    String id, title, text, DATE, year, month, date, day;
                     try {
                         date = db.getString(i + " date");
 
@@ -112,6 +116,34 @@ public class MainServiceAbility extends AceInternalAbility {
                         result.put("text", text);
                     } catch (KvStoreException k) {
                         text = "";
+                    }
+                    ;
+                    try {
+                        year = db.getString(i + " year");
+                        result.put("year", year);
+                    } catch (KvStoreException k) {
+                        year = "";
+                    }
+                    ;
+                    try {
+                        month = db.getString(i + " month");
+                        result.put("month", month);
+                    } catch (KvStoreException k) {
+                        month = "";
+                    }
+                    ;
+                    try {
+                        date = db.getString(i + " date");
+                        result.put("date", date);
+                    } catch (KvStoreException k) {
+                        date = "";
+                    }
+                    ;
+                    try {
+                        day = db.getString(i + " day");
+                        result.put("day", day);
+                    } catch (KvStoreException k) {
+                        day = "";
                     }
                     ;
 //                    HiLog.debug(LABEL, String.valueOf(result));
