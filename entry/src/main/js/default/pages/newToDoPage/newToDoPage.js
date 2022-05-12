@@ -45,8 +45,12 @@ export default {
         this.month = currentDate.getMonth() + 1;
         this.date = currentDate.getDate();
         this.day = currentDate.getDay();
-
+    },
+    onShow() {
         this.id = this.content.id;
+        this.title = this.content.title;
+        this.text = this.content.text;
+        this.ddl = this.content.DATE;
     },
     ChangeData(e) {
 
