@@ -25,6 +25,7 @@ public class MainServiceAbility extends AceInternalAbility {
 
     private static final int ACTION_INSERT_TODOLIST = 10001;
     private static final int ACTION_SELECT_TODOLIST = 10002;
+    private static final int ACTION_DELETE_TODOLIST = 10003;
     private static final int ACTION_SYNC = 101;
 
     // 定义日志标签

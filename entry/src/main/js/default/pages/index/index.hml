@@ -32,6 +32,10 @@
                         {{$item.text}}
                     </text>
                 </div>
+                <div class="delete-choose">
+                    <input type="checkbox" value="{{$idx}}" disabled="{{!choose_delete}}" show="{{choose_delete}}" onchange="ChooseToDelete($idx)">
+                    </input>
+                </div>
             </list-item>
         </list>
     </div>

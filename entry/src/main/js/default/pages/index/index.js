@@ -3,6 +3,7 @@ import router from '@system.router';
 const ABILITY_TYPE_INTERNAL = 1;
 const ACTION_INSERT_TODOLIST = 10001;
 const ACTION_SELECT_TODOLIST = 10002;
+const ACTION_DELETE_TODOLIST = 10003;
 const ACTION_SYNC = 0;
 
 export default {
@@ -11,6 +12,8 @@ export default {
         currentMonth: "",
         toDoLists: "",
         add_delete: "+",
+        choose_delete:false,
+        choose_indexes:[],
     },
     onInit() {
         this.title = this.$t('strings.world');
@@ -47,14 +50,21 @@ export default {
         //        this.number = this.todoList.length.toString() + this.$t('strings.number');
     },
     Btn_Add() {
-        router.push({
-            uri: "pages/newToDoPage/newToDoPage",
-            params: {
-                content: {
-                    id: -1
+        if (this.choose_delete == false) {
+            router.push({
+                uri: "pages/newToDoPage/newToDoPage",
+                params: {
+                    content: {
+                        id: -1
+                    }
                 }
-            }
-        });
+            });
+        }else{
+            this.deleteTodos();
+            this.choose_indexes = [];
+        }
+        this.choose_delete = false;
+        this.add_delete = "+";
     },
     ListClicked(x) {
         //        console.info(x.toString());
@@ -68,7 +78,25 @@ export default {
         });
     },
     ListLongPressed() {
+        this.choose_delete = !this.choose_delete;
+        console.info(this.choose_delete);
+    },
+    // 选择删除的TODO
+    ChooseToDelete(value, e) {
+        console.info("ClickToDelete" + e.checked.toString());
+        if (e.checked) {
+            this.add_delete = "-";
+            this.choose_indexes.push(value);
+            console.info("indexes: " + this.choose_indexes.toString());
+        }
+        else {
+            this.choose_indexes.splice(this.choose_indexes.indexOf(value), 1);
+            console.info("indexes: " + this.choose_indexes.toString());
+        };
 
+        if (this.choose_indexes.length == 0) {
+            this.add_delete = "+";
+        }
     },
     getTodos: async function (condition) {
         console.info("获取本地数据");
@@ -103,28 +131,28 @@ export default {
             console.info("getTodoLists" + k);
             this.toDoLists[n] = JSON.parse(k);
             console.info(this.toDoLists);
-            //            this.toDoLists[n].index = i;
-            //
-            //            var _ddls = this.todoList[n].ddl.split(",");
-            //            this.toDoLists[n].ddl = _ddls[0];
-            //            this.toDoLists[n].ddls = [];
-            //            this.toDoLists[n].ddls[0] = _ddls[1];
-            //            this.toDoLists[n].ddls[1] = _ddls[2];
-            //            this.toDoLists[n].ddls[2] = _ddls[3];
-            //            var today = new Date();
-            //            if (today.getTime() >= Date.parse(_ddls[3])){
-            //                this.todoList[n].color = 3;
-            //            } else if (today.getTime() >= Date.parse(_ddls[2])){
-            //                this.todoList[n].color = 2;
-            //            } else if (today.getTime() >= Date.parse(_ddls[1])){
-            //                this.todoList[n].color = 1;
-            //            } else {
-            //                this.todoList[n].color = 0;
-            //            }
-            //            console.info("getTodos"+this.todoList[n].ddls.toString());
 
             n++;
         }
         console.info("end");
+    },
+    deleteTodos: async function(){
+        console.info("deleteTodos");
+        var actionData = {};
+        var action = {};
+        action.bundleName = 'com.example.calanderbs';
+        action.abilityName = 'com.example.calanderbs.MainServiceAbility';
+        action.messageCode = ACTION_DELETE_TODOLIST;
+        action.abilityType = ABILITY_TYPE_INTERNAL;
+        action.syncOption = ACTION_SYNC;
+        for (var i in this.choose_indexes) {
+
+            var ii = this.choose_indexes[i];
+            actionData.id = this.todoList[ii].id;
+            action.data = actionData;
+
+            var result = await FeatureAbility.callAbility(action);
+        }
+        this.getTodos();
     }
 }
