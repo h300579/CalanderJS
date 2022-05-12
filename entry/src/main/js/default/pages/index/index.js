@@ -145,12 +145,14 @@ export default {
         action.messageCode = ACTION_DELETE_TODOLIST;
         action.abilityType = ABILITY_TYPE_INTERNAL;
         action.syncOption = ACTION_SYNC;
+        console.info("before delete");
         for (var i in this.choose_indexes) {
+            console.info("loop in");
 
             var ii = this.choose_indexes[i];
-            actionData.id = this.todoList[ii].id;
+            actionData.id = this.toDoLists[ii].id;
             action.data = actionData;
-
+            console.info(actionData.id);
             var result = await FeatureAbility.callAbility(action);
         }
         this.getTodos();

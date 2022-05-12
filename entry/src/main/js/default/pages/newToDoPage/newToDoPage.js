@@ -44,7 +44,7 @@ export default {
         this.year = currentDate.getFullYear();
         this.month = currentDate.getMonth() + 1;
         this.date = currentDate.getDate();
-        this.day = currentDate.getDay();
+        this.day = this.weekArray[currentDate.getDay()];
     },
     onShow() {
         this.id = this.content.id;

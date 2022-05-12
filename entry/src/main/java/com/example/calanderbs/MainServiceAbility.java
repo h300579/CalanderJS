@@ -156,6 +156,61 @@ public class MainServiceAbility extends AceInternalAbility {
 
                 break;
             }
+            case ACTION_DELETE_TODOLIST: {
+
+
+                String dataStr = data.readString();
+                ToDoList param = new ToDoList();
+                try {
+                    param = ZSONObject.stringToClass(dataStr, ToDoList.class);
+                } catch (RuntimeException e) {
+                    HiLog.error(LABEL, "convert failed.");
+                }
+                HiLog.debug(LABEL,param.id);
+                try {
+                    db.delete(param.id + " DATE");
+                } catch (KvStoreException k){
+                    HiLog.debug(LABEL,"no");
+                };
+                try {
+                    db.delete(param.id + " date");
+                } catch (KvStoreException k){
+                    HiLog.debug(LABEL,"no");
+                };
+                try {
+                    db.delete(param.id + " day");
+                } catch (KvStoreException k){
+                    HiLog.debug(LABEL,"no");
+                };
+                try {
+                    db.delete(param.id + " id");
+                } catch (KvStoreException k){
+                    HiLog.debug(LABEL,"no");
+                };
+                try {
+                    db.delete(param.id + " month");
+                } catch (KvStoreException k){
+                    HiLog.debug(LABEL,"no");
+                };
+                try {
+                    db.delete(param.id + " text");
+                } catch (KvStoreException k){
+                    HiLog.debug(LABEL,"no");
+                };
+                try {
+                    db.delete(param.id + " title");
+                } catch (KvStoreException k){
+                    HiLog.debug(LABEL,"no");
+                };
+                try {
+                    db.delete(param.id + " year");
+                } catch (KvStoreException k){
+                    HiLog.debug(LABEL,"no");
+                };
+
+                HiLog.debug(LABEL, "insert or update success");
+                break;
+            }
             default: {
                 HiLog.debug(LABEL, "unknown code");
                 return false;
