@@ -64,7 +64,7 @@
         "name": "ohos.permission.DISTRIBUTED_DATASYNC",
         "usedScene":
         {
-          "ability": ["com.huawei.cookbooks.MainAbility"],
+          "ability": ["com.example.calanderbs.MainAbility"],
           "when": "always"
         }
       }

@@ -17,6 +17,7 @@ export default {
         this.currentMonth = "4月";
         this.toDoLists = [
             {
+                id: "232323",
                 title: "todo1",
                 text: "des1,asdfasdfa,afsdfasdf.",
                 year: "2022",
@@ -25,6 +26,7 @@ export default {
                 week: "1",
             },
             {
+                id:"234234",
                 title: "todo2",
                 text: "des2,asdfasdfa,afsdfasdf.",
                 year: "2022",
@@ -49,6 +51,22 @@ export default {
                 }
             }
         });
+    },
+    ListClicked(x) {
+        console.info(x.toString());
+
+        router.push({
+            uri: "pages/newToDoPage/newToDoPage",
+            params: {
+                content: {
+                    id: this.toDoLists[x].id,
+                    content:this.toDoLists[x]
+                }
+            }
+        });
+    },
+    ListLongPressed () {
+
     },
     getTodos: async function (condition) {
         console.info("获取本地数据");

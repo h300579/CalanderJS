@@ -15,7 +15,7 @@
 
     <div class="text-box">
         <list>
-            <list-item for="{{toDoLists}}" class="todoList">
+            <list-item for="{{toDoLists}}" class="todoList" onclick="ListClicked($idx)" onlongpress="ListLongPressed">
                 <div class="time-title">
                     <text class="week">
                         星期 {{$item.day}}

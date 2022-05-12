@@ -126,7 +126,8 @@
     color: white;
     width: 70%;
     max-lines: 1;
-    margin: 15fp;
+    margin-left: 15fp;
+    margin-top: 5fp;
 }
 
 
