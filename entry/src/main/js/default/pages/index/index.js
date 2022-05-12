@@ -24,7 +24,7 @@ export default {
                 month: "4",
                 day: "2",
                 week: "1",
-                date:"12",
+                date: "12",
                 DATE: "2021-03-01",
             },
             {
@@ -35,15 +35,15 @@ export default {
                 month: "4",
                 day: "3",
                 week: "3",
-                date:"13",
+                date: "13",
                 DATE: "2021-03-03",
             },
         ]
     },
     onShow: async function () {
         console.log("line38");
-        //        this.toDoLists = [];
-        //        await this.getTodos();
+        this.toDoLists = [];
+        await this.getTodos();
         //        this.number = this.todoList.length.toString() + this.$t('strings.number');
     },
     Btn_Add() {
